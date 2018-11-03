@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Details</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/layout.css">
+</head>
+<body>
+
+<form class="form-signin mt-5" method="Post">
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Case 1</h1>
+        <hr>
+        <div class="form-group row">
+            <br>
+            <div class="col-md-6">
+                <label for="inputDef">Defendant:</label>
+                <span type="text" id="inputDef" class="form-control" th:text="${case.defendant}"></span>
+            </div>
+            <div class="col-md-6">
+                <label for="DefendantRep">DefendantRep:</label>
+                <span type="text" id="DefendantRep" class="form-control" th:text="${case.defendantRep}"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <br>
+            <div class="col-md-6">
+                <label for="plain">Plaintiff:</label>
+                <span type="text" id="plain" class="form-control" th:text="${case.plaintiff}"></span>
+            </div>
+            <div class="col-md-6">
+                <label for="PlaintiffRep">PlaintiffRep:</label>
+                <span type="text" id="PlaintiffRep" class="form-control" th:text="${case.plaintiffRep}"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <br>
+            <div class="col-md-12">
+                <label for="discipline">Discipline:</label>
+                <span type="text" id="discipline" class="form-control" th:text="${case.discipline}"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <br>
+            <div class="col-md-6">
+                <label for="juristiction">Juristiction:</label>
+                <span type="text" id="juristiction" class="form-control" th:text="${case.juristiction}"></span>
+            </div>
+            <div class="col-md-6">
+                <label for="value">Value:</label>
+                <span type="number" id="value" class="form-control" th:text="${case.value}"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <br>
+            <div class="col-md-6">
+                <label for="caseHandler">Case Handler:</label>
+                <span type="text" id="caseHandler" class="form-control" th:text="${case.caseHandler}"></span>
+            </div>
+            <div class="col-md-6">
+                <label for="contactPerson">Contact Person:</label>
+                <span type="text" id="contactPerson" class="form-control" th:text="${case.contactPerson}"></span>
+            </div>
+        </div>
+        <div class="text-left mb-4">
+            <br>
+            <a href="/cases" role="button"
+               class="btn btn-info">Go Back</a>
+            <a href="/case_stats" role="button"
+               class="float-right btn btn-success">Stats</a>
+        </div>
+    </div>
+</form>
+</body>
+</html>
