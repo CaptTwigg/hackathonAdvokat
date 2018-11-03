@@ -12,7 +12,7 @@ public class Session {
   }
 
   public static boolean login(String username, String password, HttpSession session) throws IOException, ClassNotFoundException {
-    ArrayList<User> users = ModelFiles.load("users.txt");
+    ArrayList<User> users = ModelFiles.load("C:\\Users\\marti\\Dropbox\\KEA - Datamatiker\\GitHub\\hackathonAdvokat\\src\\main\\resources\\files\\users.txt");
     for (User user : users){
       if(user.getPassword().equals(password) & user.getUsername().equals(username)) {
         session.setAttribute("NIVEAU", user.getNiveau());
