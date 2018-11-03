@@ -1,6 +1,8 @@
 package com.hackathon.model;
 
-public class Case {
+import java.io.Serializable;
+
+public class Case implements Serializable {
 	Integer casenumber;
 	String defendant;
 	String plaintiff;

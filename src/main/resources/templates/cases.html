@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>cases</title>
@@ -19,15 +19,34 @@
 </head>
 <body>
 
-<div class="row">
-
+<div class="row mt-5">
     <div class="col-10"></div>
     <div class="col-1">
         <a role="button" href="#" class="btn btn-success">Create new case</a>
     </div>
     <div class="col-1"></div>
+</div>
 
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <table class="table">
+            <thead>
+            <th>Cases</th>
+            </thead>
 
+            <tbody>
+            <tr th:each="case: ${cases}">
+                <td th:text="${'Casenumber: ' + case.casenumber}"></td>
+                <td th:text="${case.defendant}"></td>
+                <td><a class="btn btn-sm btn-success" th:href="${'case/' + case.casenumber}">Details</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-2"></div>
 </div>
 
 
