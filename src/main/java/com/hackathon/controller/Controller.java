@@ -18,6 +18,11 @@ public class Controller {
     return "index";
   }
 
+  @GetMapping("/cases")
+  public String cases(){
+    return "cases";
+  }
+
   @GetMapping("/login")
   public String viewLogin(Model model){
     model.addAttribute("loginFailed", loginFailed);
