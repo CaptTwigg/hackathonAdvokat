@@ -11,11 +11,11 @@ public class CaseView {
 
   public static void main(String[] args) throws IOException {
     ArrayList arrayList = new ArrayList();
-    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Contact Person Jensen"));
-    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Contact Person Jensen"));
-    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Contact Person Jensen"));
-    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Contact Person Jensen"));
-    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Contact Person Jensen"));
+    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Christion Jensen"));
+    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Christion Jensen"));
+    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Christion Jensen"));
+    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Christion Jensen"));
+    arrayList.add(new Case(generateCaseNumber(arrayList), "Ole Hansen", "plaintiff", "Rasmus Jacobsen", "plainttiffRep", "Casetype", "juristiction", 10000000, "Hans Hansen", "Christion Jensen"));
 
 
     ModelFiles.save("/Users/bob/Dropbox/github/hackathonAdvokat/src/main/resources/files/cases.txt", arrayList);
