@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <title>Statistic</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
 </head>
 <body>
 <div class="row">
@@ -12,36 +24,34 @@
         <div style="width: 400px; height: 400px;">
             <canvas id="myChart" width="40" height="40"></canvas>
         </div>
-
-        <div id="canvas-holder" style="width: 400px; height: 400px;">
-            <canvas id="chart-area"></canvas>
-        </div>
+        <h1>Total cost: 39 </h1>
     </div>
 </div>
+
+<div style="width: 400px; height: 400px;">
+    <canvas id="chart-area"></canvas>
+</div>
+
 <script>
   var ctx = document.getElementById("myChart").getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: ["Court fees", "Lawyer fees", "External fees", "Internal costs"],
       datasets: [{
-        label: 'Number of cases',
-        data: [12, 19, 3, 5, 2, 3],
+        label: 'Costs in millions',
+        data: [12, 19, 3, 5],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
+          'rgba(75, 192, 192, 0.2)'
         ],
         borderColor: [
           'rgba(255,99,132,1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
+          'rgba(75, 192, 192, 1)'
         ],
         borderWidth: 1
       }]
@@ -71,26 +81,19 @@
         data: [
           randomScalingFactor(),
           randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
+          randomScalingFactor()
         ],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
+          'rgba(255, 206, 86, 0.2)'
         ],
         label: 'Dataset 1'
       }],
       labels: [
-        'Red',
-        'Orange',
-        'Yellow',
-        'Green',
-        'Blue'
+        'Court fees',
+        'Lawyer fees',
+        'External counsel fees'
       ]
     },
     options: {
