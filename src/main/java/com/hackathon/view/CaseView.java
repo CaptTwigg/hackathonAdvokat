@@ -31,4 +31,8 @@ public class CaseView {
 
     return caseNumber;
   }
+
+  public static ArrayList getCases() throws IOException, ClassNotFoundException {
+    return ModelFiles.load("src/main/resources/files/cases.txt");
+  }
 }
