@@ -24,6 +24,13 @@
     <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Case 1</h1>
         <hr>
+        <div class="text-left mb-4">
+            <br>
+            <a href="/cases" role="button"
+               class="btn btn-info">Go Back</a>
+            <a href="/case_stats" role="button"
+               class="float-right btn btn-success">Stats</a>
+        </div>
         <div class="form-group row">
             <br>
             <div class="col-md-6">
@@ -75,13 +82,42 @@
                 <span type="text" id="contactPerson" class="form-control" th:text="${case.contactPerson}"></span>
             </div>
         </div>
-        <div class="text-left mb-4">
-            <br>
-            <a href="/cases" role="button"
-               class="btn btn-info">Go Back</a>
-            <a href="/case_stats" role="button"
-               class="float-right btn btn-success">Stats</a>
-        </div>
+    </div>
+    <div class="form-group row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Phases</th>
+                <th scope="col">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Pre-lit</td>
+                <td>$1,100</td>
+            </tr>
+            <tr>
+                <td>Subpoena</td>
+                <td>$3,000</td>
+            </tr>
+            <tr>
+                <td>Reply</td>
+                <td>$3,000</td>
+            </tr>
+            <tr>
+                <td>Complaint</td>
+                <td>$2,000</td>
+            </tr>
+            <tr>
+                <td>Answer</td>
+                <td>$3,500</td>
+            </tr>
+            <tr>
+                <td>Rejoin</td>
+                <td>$6,000</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </form>
 </body>
