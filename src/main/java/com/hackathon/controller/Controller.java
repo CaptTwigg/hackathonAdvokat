@@ -12,15 +12,16 @@ import java.io.IOException;
 @org.springframework.stereotype.Controller
 public class Controller {
   static boolean loginFailed = false;
+
   @GetMapping("/")
   public String index(){
 
     return "index";
   }
 
-  @GetMapping("/cases")
-  public String cases(){
-    return "cases";
+  @GetMapping("/process")
+  public String process(){
+    return "process";
   }
 
   @GetMapping("/login")
