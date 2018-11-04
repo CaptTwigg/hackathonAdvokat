@@ -18,21 +18,27 @@
           crossorigin="anonymous">
     <link rel="stylesheet" href="/layout.css">
     <style>
-        .row{margin: 0;}
+        .row {
+            margin: 0;
+        }
     </style>
 
 </head>
-<body >
+<body>
 
 <div class="row mt-5">
-    <div class="col-10"></div>
+    <div class="col-md-1">
+        <a href="/" role="button"
+           class="btn " style="background: rgb(75,75,75); color: white">Go Back</a>
+    </div>
+    <div class="col-9"></div>
     <div class="col-1">
         <a role="button" href="/create_case" class="btn btn-success">Create new case</a>
     </div>
     <div class="col-1"></div>
 </div>
 
-<div class="row" >
+<div class="row">
     <div class="col-2"></div>
     <div class="col-8">
         <table class="table table-striped">
@@ -46,7 +52,7 @@
             <tr th:each="case: ${cases}">
                 <td th:text="${'Casenumber: ' + case.casenumber}"></td>
                 <td th:text="${case.caseHandler}"></td>
-                <td><a class="btn btn-sm btn-success" th:href="${'case/' + case.casenumber}">Details</a>
+                <td><a class="btn btn-sm " style="background: rgb(255, 128, 0); color: white" th:href="${'case/' + case.casenumber}">Details</a>
                 </td>
             </tr>
             </tbody>
