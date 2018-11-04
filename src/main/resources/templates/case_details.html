@@ -19,106 +19,189 @@
     <link rel="stylesheet" href="/layout.css">
 </head>
 <body>
-
-<form class="form-signin mt-5" method="Post">
-    <div class="text-center mb-4">
-        <h1 class="h3 mb-3 font-weight-normal">Case 1</h1>
+<div class="form-group row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form class=" mt-5" method="Post">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">Case 1</h1>
+                <hr>
+                <div class="text-left mb-4">
+                    <br>
+                    <a href="/cases" role="button"
+                       class="btn btn-info">Go Back</a>
+                    <a href="/case_stats" role="button"
+                       class="float-right btn btn-success">Stats</a>
+                </div>
+                <div class="form-group row">
+                    <br>
+                    <div class="col-md-4">
+                        <label for="inputDef">Defendant:</label>
+                        <span type="text" id="inputDef" class="form-control" th:text="${case.defendant}"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="DefendantRep">Defendant Representative:</label>
+                        <span type="text" id="DefendantRep" class="form-control" th:text="${case.defendantRep}"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="plain">Plaintiff:</label>
+                        <span type="text" id="plain" class="form-control" th:text="${case.plaintiff}"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <br>
+                    <div class="col-md-4">
+                        <label for="PlaintiffRep">Plaintiff Representative:</label>
+                        <span type="text" id="PlaintiffRep" class="form-control" th:text="${case.plaintiffRep}"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="discipline">Discipline:</label>
+                        <span type="text" id="discipline" class="form-control" th:text="${case.discipline}"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="juristiction">Jurisdiction:</label>
+                        <span type="text" id="juristiction" class="form-control" th:text="${case.juristiction}"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <br>
+                    <div class="col-md-4">
+                        <label for="value">Value:</label>
+                        <span type="number" id="value" class="form-control" th:text="${case.value}"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="caseHandler">Case Handler:</label>
+                        <span type="text" id="caseHandler" class="form-control" th:text="${case.caseHandler}"></span>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="contactPerson">Contact Person:</label>
+                        <span type="text" id="contactPerson" class="form-control"
+                              th:text="${case.contactPerson}"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="form-group row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 ">
         <hr>
-        <div class="text-left mb-4">
-            <br>
-            <a href="/cases" role="button"
-               class="btn btn-info">Go Back</a>
-            <a href="/case_stats" role="button"
-               class="float-right btn btn-success">Stats</a>
-        </div>
-        <div class="form-group row">
-            <br>
-            <div class="col-md-6">
-                <label for="inputDef">Defendant:</label>
-                <span type="text" id="inputDef" class="form-control" th:text="${case.defendant}"></span>
+        <legend>Progress</legend>
+        <hr>
+        <div class="progress" style="height: 30px;">
+            <div class="progress-bar bg-success" style="width:15%;">
+                Pre-litigation
             </div>
-            <div class="col-md-6">
-                <label for="DefendantRep">Defendant Representative:</label>
-                <span type="text" id="DefendantRep" class="form-control" th:text="${case.defendantRep}"></span>
+            <div class="progress-bar bg-secondary" style="width:30%;">
+                Subpoena
             </div>
-        </div>
-        <div class="form-group row">
-            <br>
-            <div class="col-md-6">
-                <label for="plain">Plaintiff:</label>
-                <span type="text" id="plain" class="form-control" th:text="${case.plaintiff}"></span>
+            <div class="progress-bar bg-secondary" style="width:10%;">
+                Reply
             </div>
-            <div class="col-md-6">
-                <label for="PlaintiffRep">Plaintiff Representative:</label>
-                <span type="text" id="PlaintiffRep" class="form-control" th:text="${case.plaintiffRep}"></span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <br>
-            <div class="col-md-12">
-                <label for="discipline">Discipline:</label>
-                <span type="text" id="discipline" class="form-control" th:text="${case.discipline}"></span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <br>
-            <div class="col-md-6">
-                <label for="juristiction">Jurisdiction:</label>
-                <span type="text" id="juristiction" class="form-control" th:text="${case.juristiction}"></span>
-            </div>
-            <div class="col-md-6">
-                <label for="value">Value:</label>
-                <span type="number" id="value" class="form-control" th:text="${case.value}"></span>
-            </div>
-        </div>
-        <div class="form-group row">
-            <br>
-            <div class="col-md-6">
-                <label for="caseHandler">Case Handler:</label>
-                <span type="text" id="caseHandler" class="form-control" th:text="${case.caseHandler}"></span>
-            </div>
-            <div class="col-md-6">
-                <label for="contactPerson">Contact Person:</label>
-                <span type="text" id="contactPerson" class="form-control" th:text="${case.contactPerson}"></span>
+            <div class="progress-bar bg-secondary" style="width:15%;">
+                Complaint
+            </div><div class="progress-bar bg-secondary" style="width:15%;">
+            Answer
+            </div><div class="progress-bar bg-secondary" style="width:15%;">
+                Rejoin
             </div>
         </div>
     </div>
-    <div class="form-group row">
+    <div class="col-md-2"></div>
+</div>
+<div class="form-group row mt-5">
+    <div class="col-md-2"></div>
+    <div class="form-group col-md-8">
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th scope="col">Phases</th>
-                <th scope="col">Amount</th>
+            <tr class="d-flex">
+                <th scope="col" class="col-6">Phases</th>
+                <th scope="col" class="col-4">Amount</th>
+                <th class="text-right col-2"></th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Pre-lit</td>
-                <td>$1,100</td>
+            <tr class="d-flex">
+                <td class="col-6">Pre-litigation</td>
+                <td class="col-4">$1,100</td>
+                <td class="text-right col-2">
+                    <a type="button" class="btn btn-success" data-toggle="collapse" href="#collapseExample"
+                       role="button" aria-expanded="false" aria-controls="collapseExample">Extend</a>
+                </td>
             </tr>
-            <tr>
-                <td>Subpoena</td>
-                <td>$3,000</td>
-            </tr>
-            <tr>
-                <td>Reply</td>
-                <td>$3,000</td>
-            </tr>
-            <tr>
-                <td>Complaint</td>
-                <td>$2,000</td>
-            </tr>
-            <tr>
-                <td>Answer</td>
-                <td>$3,500</td>
-            </tr>
-            <tr>
-                <td>Rejoin</td>
-                <td>$6,000</td>
-            </tr>
+            <table class="table collapse" id="collapseExample">
+                <thead>
+                <tr class="d-flex">
+                    <th scope="col" class="col-6">Description</th>
+                    <th scope="col" class="col-4">Amount</th>
+                    <th scope="col" class="col-2 text-right"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="d-flex">
+                    <td class="col-6">External counsel fees</td>
+                    <td class="col-4">$200</td>
+                    <td class="text-right col-2">
+                        <a href="#" type="button" class="btn btn-success">Extend</a>
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-6">Lawyer fees</td>
+                    <td class="col-4">$500</td>
+                    <td class="text-right col-2">
+                        <a href="#" type="button" class="btn btn-success">Extend</a>
+                    </td>
+                </tr>
+                <tr class="d-flex">
+                    <td class="col-6">Counsel fees</td>
+                    <td class="col-4">$600</td>
+                    <td class="text-right col-2">
+                        <a href="#" type="button" class="btn btn-success">Extend</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<tr class="d-flex">-->
+            <!--<td class="col-6">Subpoena</td>-->
+            <!--<td class="col-4">$3,000</td>-->
+            <!--<td class="text-right col-2">-->
+            <!--<a href="/case/extend" type="button" class="btn btn-success">Extend</a>-->
+            <!--</td>-->
+            <!--</tr>-->
+            <!--<tr class="d-flex">-->
+            <!--<td class="col-6">Reply</td>-->
+            <!--<td class="col-4">$3,000</td>-->
+            <!--<td class="text-right col-2">-->
+            <!--<a href="/case/extend" type="button" class="btn btn-success">Extend</a>-->
+            <!--</td>-->
+            <!--</tr>-->
+            <!--<tr class="d-flex">-->
+            <!--<td class="col-6">Complaint</td>-->
+            <!--<td class="col-4">$2,000</td>-->
+            <!--<td class="text-right col-2">-->
+            <!--<a href="/case/extend" type="button" class="btn btn-success">Extend</a>-->
+            <!--</td>-->
+            <!--</tr>-->
+            <!--<tr class="d-flex">-->
+            <!--<td class="col-6">Answer</td>-->
+            <!--<td class="col-4">$3,500</td>-->
+            <!--<td class="text-right col-2">-->
+            <!--<a href="/case/extend" type="button" class="btn btn-success">Extend</a>-->
+            <!--</td>-->
+            <!--</tr>-->
+            <!--<tr class="d-flex">-->
+            <!--<td class="col-6">Rejoin</td>-->
+            <!--<td class="col-4">$6,000</td>-->
+            <!--<td class="text-right col-2">-->
+            <!--<a href="/case/extend" type="button" class="btn btn-success">Extend</a>-->
+            <!--</td>-->
+            <!--</tr>-->
             </tbody>
         </table>
     </div>
-</form>
+    <div class="col-md-2"></div>
+</div>
 </body>
 </html>

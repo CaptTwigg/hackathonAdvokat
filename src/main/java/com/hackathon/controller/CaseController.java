@@ -58,4 +58,9 @@ public class CaseController {
 	public String singleCaseStats(){
 		return "single_case_stats";
 	}
+
+	@GetMapping("case/extend")
+	public String extendCase(){
+		return "case_extend";
+	}
 }
