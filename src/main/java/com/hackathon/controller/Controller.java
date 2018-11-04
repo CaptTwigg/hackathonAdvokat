@@ -46,4 +46,9 @@ public class Controller {
       }
     return "redirect:/";
   }
+
+  @GetMapping("/foresight")
+  public String forsight(){
+    return "foresight";
+  }
 }
