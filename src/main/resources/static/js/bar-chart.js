@@ -774,9 +774,9 @@ if ($('#socialads').length) {
         },
         title: false,
         xAxis: {
-            categories: ['Pre-lit', 'Subpoena', 'Reply', 'Complaint', 'Rejoin']
+            categories: ['Pre-lit', 'Subpoena', 'Points of defence', 'Reply', 'Rejoinder', 'Decision']
         },
-        colors: ['#F5CA3F', '#E5726D', '#12C599', '#5F73F2'],
+        colors: ['#F5CA3F', '#E5726D', '#12C599'],
         yAxis: {
             min: 0,
             title: false
@@ -791,18 +791,14 @@ if ($('#socialads').length) {
             }
         },
         series: [{
-                name: 'External counsel fees',
-                data: [51, 48, 64, 48, 84]
+                name: 'External law firm fees',
+                data: [51, 48, 34, 64, 48, 84]
             }, {
-                name: 'Lawyer fees',
-                data: [83, 84, 53, 81, 88]
+                name: 'Consultant fees',
+                data: [83, 84, 22, 53, 81, 88]
             }, {
-                name: 'Counsel fees',
-                data: [93, 84, 53, 53, 48]
-            },
-            {
-                name: 'Extra Cost',
-                data: [430, 312, 348, 254, 258]
+                name: 'Other fees',
+                data: [93, 84, 44, 53, 53, 48]
             }
         ]
     });

@@ -406,16 +406,18 @@ if ($('#seolinechart8').length) {
         type: 'doughnut',
         // The data for our dataset
         data: {
-            labels: ["Pre-lit", "Subpoena", "Reply", "Complaint"],
+            labels: ["Pre-lit", "Subpoena", "Points of defence", "Reply", "Rejoinder", "Decision"],
             datasets: [{
                 backgroundColor: [
                     "#8919FE",
                     "#12C498",
                     "#F8CB3F",
-                    "#E36D68"
+                    "#E36D68",
+                    "#80e36f",
+                    "#6f7de3"
                 ],
                 borderColor: '#fff',
-                data: [810, 410, 260, 150],
+                data: [810, 410, 260, 305, 150, 204]
             }]
         },
         // Configuration options go here
