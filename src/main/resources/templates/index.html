@@ -63,21 +63,37 @@
         font-size: 16px;
         padding: 16px 32px;
     }
+
+    .logo h1{
+        padding: 10px;
+        color: white;
+    }
+    .logo-row{
+        background: RGB(255,128,0);
+        padding: 0;
+        height: 100px;
+    }
 </style>
 <body>
-<div class="row mt-5"></div>
-<div class="row">
+<div class="row logo-row">
+    <div class="col-12 logo">
+        <h1>IFALEGALTECH</h1>
+    </div>
+</div>
+
+<div class="row mt-5">
     <div class="col-4">
         <div class="container">
             <a href="/cases">
                 <img th:src="${'../../image/law.png'}"
                      alt="Avatar" class="image" style="width:100%">
-            </a>
-            <div class="middle">
-                <div class="text">
-                    <legend>CASES</legend>
+
+                <div class="middle">
+                    <div class="text">
+                        <legend>CASES</legend>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="col-4">
@@ -85,12 +101,13 @@
             <a href="/foresight">
                 <img th:src="${'../../image/dollar.png'}"
                      alt="Avatar" class="image" style="width:100%">
-            </a>
-            <div class="middle">
-                <div class="text">
-                    <legend>FORESIGHT</legend>
+
+                <div class="middle">
+                    <div class="text">
+                        <legend>FORESIGHT</legend>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <div class="col-4">
@@ -98,12 +115,13 @@
             <a href="/statistic">
                 <img th:src="${'../../image/presentation.png'}"
                      alt="Avatar" class="image" style="width:100%">
-            </a>
-            <div class="middle">
-                <div class="text">
-                    <legend>STATISTICS</legend>
+                <div class="middle">
+                    <div class="text">
+                        <legend>STATISTICS</legend>
+                    </div>
                 </div>
-            </div>
+            </a>
+
         </div>
     </div>
 </div>
