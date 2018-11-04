@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
             integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
             crossorigin="anonymous"></script>
@@ -18,91 +19,172 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 </head>
-
 <style>
-
-    .row{
-        padding-top: 5%;
-    }
-    .container {
-        position: relative;
-        width: 100%;
+    .down {
+        padding-top: 100px;
     }
 
-    .image {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
+    h3 {
+        text-indent: 10px;
     }
 
-    .middle {
-        transition: .5s ease;
-        opacity: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
+
+    .btn {
+        background: RGB(255, 128, 0);
+
     }
 
-    .container:hover .image {
-        opacity: 0.3;
-    }
-
-    .container:hover .middle {
-        opacity: 1;
-    }
-
-    .text {
-        color: black;
-        font-size: 16px;
-        padding: 16px 32px;
-    }
 </style>
 <body>
-<div class="row mt-5"></div>
-<div class="row">
-    <div class="col-4">
-        <div class="container">
-            <a href="/cases">
-            <img  th:src="${'../../image/law.png'}"
-                 alt="Avatar" class="image" style="width:100%">
-            </a>
-            <div class="middle">
-                <div class="text">Cases</div>
-            </div>
+
+<div class="row down">
+
+    <div class="col-1"></div>
+    <div class="col-5">
+
+        <h1>Circumstances</h1>
+
+        <!--Checkboxs-->
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">
+                External counsel costs
+            </label>
         </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+                Internal counsel costs
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+            <label class="form-check-label" for="defaultCheck3">
+                Other counsel costs
+            </label>
+        </div>
+        <br>
+
+        <!--dropdown-->
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="casetype">Case type</label>
+            </div>
+            <select class="custom-select" id="casetype" required>
+                <option selected disabled value="0">Choose...</option>
+                <option value="1">Patents</option>
+                <option value="2">Trademarks</option>
+                <option value="3">Competition law</option>
+                <option value="3">Copyright</option>
+                <option value="4">M&A</option>
+            </select>
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="jurisdiction">Jurisdiction</label>
+            </div>
+            <select class="custom-select" id="jurisdiction" required>
+                <option selected disabled value="0">Choose...</option>
+                <option value="1">District Court</option>
+                <option value="2">High Court</option>
+                <option value="3">Supreme Court</option>
+                <option value="4">Maritime & commercial Court</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="numDefendants">Number of defendants</label>
+            </div>
+            <select class="custom-select" id="numDefendants" required>
+                <option selected disabled value="0">Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="numplaintiffs">Number of plaintiffs</label>
+            </div>
+            <select class="custom-select" id="numplaintiffs" required>
+                <option selected disabled value="0">Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="valueInterval">Case value interval</label>
+            </div>
+            <select class="custom-select" id="valueInterval" required>
+                <option selected disabled value="0">Choose...</option>
+                <option value="1">0-50.000</option>
+                <option value="20">50.001-200.000</option>
+                <option value="30">200.001-500.000</option>
+                <option value="40">500.001-1.000.000</option>
+                <option value="50">1.000.001-2.000.000</option>
+            </select>
+        </div>
+
+
+        <button class="btn " id="calcButton">Get Foresight</button>
+        <br>
+
     </div>
 
-    <div class="col-4">
-        <div class="container">
-            <a href="/finance">
-            <img th:src="${'../../image/dollar.png'}"
-                 alt="Avatar" class="image" style="width:100%">
-            </a>
-            <div class="middle">
-                <div class="text">Finance</div>
-            </div>
-        </div>
-    </div>
+    <div class="col-1"></div>
+    <div class="col-4 ">
+        <h1>Cost</h1>
+        <h3 id="price">--</h3>
 
-    <div class="col-4">
-        <div class="container">
-            <a href="/statistic">
-            <img th:src="${'../../image/presentation.png'}"
-                 alt="Avatar" class="image" style="width:100%">
-            </a>
-            <div class="middle">
-                <div class="text">Statistic</div>
-            </div>
-        </div>
-    </div>
 
+        <h1>Details </h1>
+        <h3>Partner: <span id="partner"></span></h3>
+        <h3>Lawyer: <span id="lawyer"></span></h3>
+        <h3>Assistant attourney: <span id="assistant"></span></h3>
+        <h3>Paralegal: <span id="paralegal"></span></h3>
+
+
+    </div>
+    <div class="col-1"></div>
 </div>
 
 </body>
+<script>
+  $("#calcButton").on("click", function () {
+    var casetype = parseInt($("#casetype").val());
+    var juriscitio = parseInt($("#jurisdiction").val());
+    var defedants = parseInt($("#numDefendants").val());
+    var plaintiffs = parseInt($("#numplaintiffs").val());
+    var value = parseInt($("#valueInterval").val());
+    if (isNaN(casetype)) { casetype = 0 }
+    if (isNaN(juriscitio)) { juriscitio = 0 }
+    if (isNaN(defedants)) { defedants = 0 }
+    if (isNaN(plaintiffs)) { plaintiffs = 0 }
+    if (isNaN(value)) { value = 0 }
+
+    var total = (casetype + juriscitio + defedants + plaintiffs + value) * 1000;
+
+    $("#price").text('Total expenses: ' + total + '$');
+
+
+    //$("#partner").text(Math.random(total * (300/930)));
+    $("#lawyer").text(Math.round(total * (100/930)));
+    $("#assistant").text(Math.round(total * (300/930)));
+    $("#paralegal").text(Math.round(total * (500/930)));
+
+  });
+
+</script>
 </html>

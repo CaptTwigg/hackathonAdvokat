@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Main</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
@@ -17,15 +18,91 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 </head>
+
+<style>
+
+    .row{
+        padding-top: 3%;
+    }
+    .container {
+        position: relative;
+        width: 100%;
+    }
+
+    .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .container:hover .image {
+        opacity: 0.3;
+    }
+
+    .container:hover .middle {
+        opacity: 1;
+    }
+
+    .text {
+        color: black;
+        font-size: 16px;
+        padding: 16px 32px;
+    }
+</style>
 <body>
-<div class="row mt-5">
-    <div class="col-4 "></div>
+<div class="row mt-5"></div>
+<div class="row">
     <div class="col-4">
-            <a href="cases" role="button" class="btn btn-block btn-primary">Cases</a><br>
-            <a href="finance" role="button" class="btn btn-block btn-primary">Finance</a><br>
-            <a href="statistic" role="button" class="btn btn-block btn-primary">Statistic</a><br>
+        <div class="container">
+            <a href="/cases">
+                <img  th:src="${'../../image/law.png'}"
+                      alt="Avatar" class="image" style="width:100%">
+            </a>
+            <div class="middle">
+                <div class="text">Cases</div>
+            </div>
+        </div>
     </div>
-    <div class="col-4"></div>
+
+    <div class="col-4">
+        <div class="container">
+            <a href="/finance">
+                <img th:src="${'../../image/dollar.png'}"
+                     alt="Avatar" class="image" style="width:100%">
+            </a>
+            <div class="middle">
+                <div class="text">Finance</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="container">
+            <a href="/statistic">
+                <img th:src="${'../../image/presentation.png'}"
+                     alt="Avatar" class="image" style="width:100%">
+            </a>
+            <div class="middle">
+                <div class="text">Statistic</div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 </body>
 </html>
