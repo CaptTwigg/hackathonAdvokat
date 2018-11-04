@@ -1,112 +1,278 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Statistic</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Stats</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/icon/favicon.ico">
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <link rel="stylesheet" href="/font-awesome.min.css">
+    <link rel="stylesheet" href="/themify-icons.css">
+    <link rel="stylesheet" href="/metisMenu.css">
+    <link rel="stylesheet" href="/owl.carousel.min.css">
+    <link rel="stylesheet" href="/slicknav.min.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="/typography.css">
+    <link rel="stylesheet" href="/default-css.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <!-- modernizr css -->
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-<div class="row">
-    <div class="col-12">
-        <div style="width: 400px; height: 400px;">
-            <canvas id="myChart" width="40" height="40"></canvas>
+<!-- page container area start -->
+<div class="page-container">
+    <!-- main content area start -->
+    <div class="main-content">
+        <div class="main-content-inner">
+            <div class="form-group row" style="margin: 50px;">
+                <!-- seo fact area start -->
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-md-12 mt-5 mb-3">
+                            <div class="card" style="margin-bottom: 5px;">
+                                <div class="seo-fact sbg1">
+                                    <div class="p-4 d-flex justify-content-between align-items-center">
+                                        <div class="seofct-icon"><i class="ti-thumb-up"></i> Internal</div>
+                                        <h2>$500</h2>
+                                    </div>
+                                    <canvas id="seolinechart1" height="50"></canvas>
+                                </div>
+                            </div>
+                            <div class="card" style="margin-top: 5px;">
+                                <div class="seo-fact sbg2">
+                                    <div class="p-4 d-flex justify-content-between align-items-center">
+                                        <div class="seofct-icon"><i class="ti-share"></i> External</div>
+                                        <h2>$700</h2>
+                                    </div>
+                                    <canvas id="seolinechart2" height="50"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-md-6 mt-md-5 mb-3">-->
+                        <!---->
+                        <!--</div>-->
+                        <!--<div class="col-md-6 mb-3 mb-lg-0">-->
+                        <!--<div class="card">-->
+                        <!--<div class="seo-fact sbg3">-->
+                        <!--<div class="p-4 d-flex justify-content-between align-items-center">-->
+                        <!--<div class="seofct-icon">Impressions</div>-->
+                        <!--<canvas id="seolinechart3" height="60"></canvas>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-6">-->
+                        <!--<div class="card">-->
+                        <!--<div class="seo-fact sbg4">-->
+                        <!--<div class="p-4 d-flex justify-content-between align-items-center">-->
+                        <!--<div class="seofct-icon">New Users</div>-->
+                        <!--<canvas id="seolinechart4" height="60"></canvas>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!-- seo fact area end -->
+                <!-- Social Campain area start -->
+                <div class="col-lg-4 mt-5">
+                    <div class="card">
+                        <div class="card-body pb-0">
+                            <h4 class="header-title">Costs</h4>
+                            <div id="socialads" style="height: 245px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Campain area end -->
+                <!-- Advertising area start -->
+                <div class="col-lg-4 mt-5">
+                    <div class="card h-full">
+                        <div class="card-body">
+                            <h4 class="header-title">Costs</h4>
+                            <canvas id="seolinechart8" height="233"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h1>Total cost: 39 </h1>
     </div>
+    <!-- main content area end -->
 </div>
+<!-- page container area end -->
+<!-- jquery latest version -->
+<script src="/js/vendor/jquery-2.2.4.min.js"></script>
+<!-- bootstrap 4 js -->
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/metisMenu.min.js"></script>
+<script src="/js/jquery.slimscroll.min.js"></script>
+<script src="/js/jquery.slicknav.min.js"></script>
 
-<div style="width: 400px; height: 400px;">
-    <canvas id="chart-area"></canvas>
-</div>
-
-<script>
-  var ctx = document.getElementById("myChart").getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ["Court fees", "Lawyer fees", "External fees", "Internal costs"],
-      datasets: [{
-        label: 'Costs in millions',
-        data: [12, 19, 3, 5],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
-    }
-  });
-</script>
-
-
-<script>
-  var randomScalingFactor = function () {
-    return Math.round(Math.random() * 100);
-  };
-
-  var config = {
-    type: 'pie',
-    data: {
-      datasets: [{
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor()
-        ],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)'
-        ],
-        label: 'Dataset 1'
-      }],
-      labels: [
-        'Court fees',
-        'Lawyer fees',
-        'External counsel fees'
-      ]
-    },
-    options: {
-      responsive: true
-    }
-  };
-
-  window.onload = function () {
-    var ctx = document.getElementById('chart-area').getContext('2d');
-    window.myPie = new Chart(ctx, config);
-  };
-
-
-</script>
+<!-- start chart js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<!-- start highcharts js -->
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<!-- start amcharts -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+<script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<!-- all line chart activation -->
+<script src="/js/line-chart.js"></script>
+<!-- all pie chart -->
+<script src="/js/pie-chart.js"></script>
+<!-- all bar chart -->
+<script src="/js/bar-chart.js"></script>
+<!-- all map chart -->
+<script src="/js/maps.js"></script>
+<!-- others plugins -->
+<script src="/js/plugins.js"></script>
+<script src="/js/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Statistic</title>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>-->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+<!--integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+<!--crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"-->
+<!--integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"-->
+<!--crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"-->
+<!--integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"-->
+<!--crossorigin="anonymous"></script>-->
+<!--<link rel="stylesheet"-->
+<!--href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"-->
+<!--integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"-->
+<!--crossorigin="anonymous">-->
+<!--<link rel="stylesheet" href="/layout.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<div class="form-group row mt-5">&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-2"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-3">&ndash;&gt;-->
+<!--&lt;!&ndash;<div style="width: 400px; height: 400px;">&ndash;&gt;-->
+<!--&lt;!&ndash;<canvas id="myChart" width="40" height="40"></canvas>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-3">&ndash;&gt;-->
+<!--&lt;!&ndash;hej<br>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="form-group row">&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-2"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-6 text-right" >&ndash;&gt;-->
+<!--&lt;!&ndash;hej&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;<div class="col-md-4">&ndash;&gt;-->
+<!--&lt;!&ndash;<div style="width: 400px; height: 400px;">&ndash;&gt;-->
+<!--&lt;!&ndash;<canvas id="chart-area"></canvas>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;var ctx = document.getElementById("myChart").getContext('2d');&ndash;&gt;-->
+<!--&lt;!&ndash;var myChart = new Chart(ctx, {&ndash;&gt;-->
+<!--&lt;!&ndash;type: 'bar',&ndash;&gt;-->
+<!--&lt;!&ndash;data: {&ndash;&gt;-->
+<!--&lt;!&ndash;labels: ["Court fees", "Lawyer fees", "External fees", "Internal costs"],&ndash;&gt;-->
+<!--&lt;!&ndash;datasets: [{&ndash;&gt;-->
+<!--&lt;!&ndash;label: 'Costs in millions',&ndash;&gt;-->
+<!--&lt;!&ndash;data: [12, 19, 3, 5],&ndash;&gt;-->
+<!--&lt;!&ndash;backgroundColor: [&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(255, 99, 132, 0.2)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(54, 162, 235, 0.2)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(255, 206, 86, 0.2)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(75, 192, 192, 0.2)'&ndash;&gt;-->
+<!--&lt;!&ndash;],&ndash;&gt;-->
+<!--&lt;!&ndash;borderColor: [&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(255,99,132,1)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(54, 162, 235, 1)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(255, 206, 86, 1)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(75, 192, 192, 1)'&ndash;&gt;-->
+<!--&lt;!&ndash;],&ndash;&gt;-->
+<!--&lt;!&ndash;borderWidth: 1&ndash;&gt;-->
+<!--&lt;!&ndash;}]&ndash;&gt;-->
+<!--&lt;!&ndash;},&ndash;&gt;-->
+<!--&lt;!&ndash;options: {&ndash;&gt;-->
+<!--&lt;!&ndash;scales: {&ndash;&gt;-->
+<!--&lt;!&ndash;yAxes: [{&ndash;&gt;-->
+<!--&lt;!&ndash;ticks: {&ndash;&gt;-->
+<!--&lt;!&ndash;beginAtZero: true&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;}]&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;});&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;var randomScalingFactor = function () {&ndash;&gt;-->
+<!--&lt;!&ndash;return Math.round(Math.random() * 100);&ndash;&gt;-->
+<!--&lt;!&ndash;};&ndash;&gt;-->
+
+<!--&lt;!&ndash;var config = {&ndash;&gt;-->
+<!--&lt;!&ndash;type: 'pie',&ndash;&gt;-->
+<!--&lt;!&ndash;data: {&ndash;&gt;-->
+<!--&lt;!&ndash;datasets: [{&ndash;&gt;-->
+<!--&lt;!&ndash;data: [&ndash;&gt;-->
+<!--&lt;!&ndash;randomScalingFactor(),&ndash;&gt;-->
+<!--&lt;!&ndash;randomScalingFactor(),&ndash;&gt;-->
+<!--&lt;!&ndash;randomScalingFactor()&ndash;&gt;-->
+<!--&lt;!&ndash;],&ndash;&gt;-->
+<!--&lt;!&ndash;backgroundColor: [&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(255, 99, 132, 0.2)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(54, 162, 235, 0.2)',&ndash;&gt;-->
+<!--&lt;!&ndash;'rgba(255, 206, 86, 0.2)'&ndash;&gt;-->
+<!--&lt;!&ndash;],&ndash;&gt;-->
+<!--&lt;!&ndash;label: 'Dataset 1'&ndash;&gt;-->
+<!--&lt;!&ndash;}],&ndash;&gt;-->
+<!--&lt;!&ndash;labels: [&ndash;&gt;-->
+<!--&lt;!&ndash;'Court fees',&ndash;&gt;-->
+<!--&lt;!&ndash;'Lawyer fees',&ndash;&gt;-->
+<!--&lt;!&ndash;'External counsel fees'&ndash;&gt;-->
+<!--&lt;!&ndash;]&ndash;&gt;-->
+<!--&lt;!&ndash;},&ndash;&gt;-->
+<!--&lt;!&ndash;options: {&ndash;&gt;-->
+<!--&lt;!&ndash;responsive: true&ndash;&gt;-->
+<!--&lt;!&ndash;}&ndash;&gt;-->
+<!--&lt;!&ndash;};&ndash;&gt;-->
+
+<!--&lt;!&ndash;window.onload = function () {&ndash;&gt;-->
+<!--&lt;!&ndash;var ctx = document.getElementById('chart-area').getContext('2d');&ndash;&gt;-->
+<!--&lt;!&ndash;window.myPie = new Chart(ctx, config);&ndash;&gt;-->
+<!--&lt;!&ndash;};&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
